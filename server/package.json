@@ -1,0 +1,35 @@
+{
+  "name": "websockets-typescript",
+  "version": "1.0.0",
+  "description": "Sending messages through webSockets and TypeScript language",
+  "main": "index.js",
+  "scripts": {
+    "start": "node node_modules/webpack/bin/webpack.js --config webpack.config.js && node build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luixaviles/websockets-typescript.git"
+  },
+  "keywords": [
+    "typescript",
+    "node",
+    "angular"
+  ],
+  "author": "Luis Aviles",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luixaviles/websockets-typescript/issues"
+  },
+  "homepage": "https://github.com/luixaviles/websockets-typescript#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.11.1",
+    "@types/socket.io": "^1.4.31",
+    "ts-loader": "^3.5.0",
+    "typescript": "^2.7.2",
+    "webpack": "^3.11.0"
+  }
+}
