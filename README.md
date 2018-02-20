@@ -1,2 +1,1 @@
-# tracking-position
-Tracking position demo using TypeScript and WebSockets
+# Using WebSockets through TypeScript language

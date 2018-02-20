@@ -4,7 +4,8 @@
   "description": "Sending messages through webSockets and TypeScript language",
   "main": "index.js",
   "scripts": {
-    "start": "node node_modules/webpack/bin/webpack.js --config webpack.config.js && node build/index.js"
+    "webpack": "node node_modules/webpack/bin/webpack.js --config webpack.config.js",
+    "start": "node build/index.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
   "devDependencies": {
     "@types/express": "^4.11.1",
     "@types/socket.io": "^1.4.31",
+    "glob": "^7.1.2",
     "ts-loader": "^3.5.0",
     "typescript": "^2.7.2",
     "webpack": "^3.11.0"
