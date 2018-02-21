@@ -3,6 +3,7 @@ import * as express from 'express';
 import * as socketIo from 'socket.io';
 
 import { Message } from './model/message';
+import { MessageGenerator } from './message-generator';
 
 export class AppServer {
     public static readonly PORT:number = 3000;
@@ -10,6 +11,8 @@ export class AppServer {
     private server: Server;
     private io: SocketIO.Server;
     private port: string | number;
+
+    private generator: MessageGenerator = new MessageGenerator();
 
     constructor() {
         this.createApp();
@@ -42,8 +45,16 @@ export class AppServer {
 
         this.io.on('connect', (socket: any) => {
             console.log('Connected client on port %s.', this.port);
+
+            let interval = setInterval(() =>{
+                const message = this.generator.generateMessage();
+                console.log('sending message: ' + JSON.stringify(message));
+                this.io.emit('message', message);
+            }, 1000);
+
             socket.on('disconnect', () => {
                 console.log('Client disconnected');
+                clearInterval(interval);
             });
         });
     }
